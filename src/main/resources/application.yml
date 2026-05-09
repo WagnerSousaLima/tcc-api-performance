@@ -2,16 +2,14 @@ spring:
   application:
     name: tcc-api-performance
   datasource:
-    url: jdbc:h2:mem:tccdb
-    driverClassName: org.h2.Driver
-    username: sa
-    password:
+    url: jdbc:postgresql://127.0.0.1:5433/tccdb
+    username: tcc_user
+    password: tcc_pass
+    driver-class-name: org.postgresql.Driver
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
     show-sql: true
 
 server:
   port: 8085
-

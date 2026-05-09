@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: tcc-postgres
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: tccdb
+      POSTGRES_USER: tcc_user
+      POSTGRES_PASSWORD: tcc_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
