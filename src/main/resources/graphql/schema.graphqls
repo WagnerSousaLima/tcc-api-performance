@@ -1,0 +1,20 @@
+type Produto {
+  id: ID!
+  nome: String!
+  preco: Float!
+  descricao: String
+}
+
+input ProdutoInput {
+  nome: String!
+  preco: Float!
+  descricao: String
+}
+
+type Query {
+  buscarProdutoPorId(id: ID!): Produto
+}
+
+type Mutation {
+  criarProduto(input: ProdutoInput!): Produto
+}
