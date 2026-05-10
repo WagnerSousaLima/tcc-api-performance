@@ -1,77 +1,58 @@
 # 🚀 Desempenho de Arquiteturas de API: REST, GraphQL e gRPC
 
-Este repositório contém o código-fonte do experimento prático desenvolvido para o Trabalho de Conclusão de Curso (TCC) do MBA em Engenharia de Software.
+Este repositório contém o código-fonte do experimento prático desenvolvido para o Trabalho de Conclusão de Curso (TCC) do MBA em Engenharia de Software (USP/ESALQ).
+
+**Autor:** Wagner Augusto de Sousa Lima
 
 ## 🎯 Objetivo da Pesquisa
-
-Mensurar e comparar objetivamente a latência, o tamanho do *payload*, o *throughput* e o consumo de recursos computacionais (CPU e memória) entre as arquiteturas de comunicação **REST, GraphQL e gRPC**. Todas as três interfaces foram implementadas em um mesmo ecossistema Spring Boot, expondo as mesmas regras de negócio, para serem submetidas a testes de estresse rigorosos e idênticos.
+Mensurar e comparar objetivamente a latência, o tamanho do *payload*, o *throughput* e o consumo de recursos computacionais (CPU e memória) entre as arquiteturas de comunicação **REST, GraphQL e gRPC**. Todas as três interfaces foram implementadas em um mesmo ecossistema Spring Boot, expondo as mesmas regras de negócio, para serem submetidas a testes de estresse rigorosos usando K6.
 
 ## 🛠️ Stack Tecnológica
-
-- **Linguagem:** Java 21
-- **Framework:** Spring Boot 4.0.6
-- **Gerenciador de Dependências:** Maven
-- **Arquiteturas de API:** REST (**implementado**) | GraphQL (**planejado**) | gRPC (**planejado**)
-- **Banco de Dados:** H2 Database (memória / desenvolvimento) | PostgreSQL (dependência presente para uso futuro)
-- **Testes e Métricas:** JUnit 5, Mockito, Spring Boot Actuator (planejado), k6 (planejado)
+* **Linguagem:** Java 21
+* **Framework:** Spring Boot 
+* **Gerenciador de Dependências:** Maven
+* **Arquiteturas de API:** REST (Implementado) | GraphQL (Implementado) | gRPC (Implementado)
+* **Banco de Dados:** PostgreSQL 15 (via Docker)
+* **Testes e Métricas:** JUnit 5, k6 (Planejado), Spring Boot Actuator
 
 ## 📂 Arquitetura do Projeto
+O projeto foi estruturado seguindo princípios de **Clean Architecture** e isolamento de domínio, garantindo que a regra de negócio seja agnóstica ao protocolo de comunicação (HTTP/JSON ou HTTP/2 Binário).
 
-O projeto foi estruturado seguindo princípios de **Clean Architecture** e isolamento de domínio, garantindo que a regra de negócio seja agnóstica ao protocolo de comunicação (HTTP/JSON ou binário).
-
-- `domain`: o coração do software. Contém as entidades JPA e os repositórios.
-- `application`: orquestração de regras de negócio (services), DTOs e exceções da aplicação.
-- `infrastructure.rest`: borda HTTP da aplicação. Contém os controllers REST e o tratamento global de exceções.
-
-Exemplos reais no código:
-- `src/main/java/br/com/wagnerlima/tcc/domain/Produto.java`
-- `src/main/java/br/com/wagnerlima/tcc/application/ProdutoService.java`
-- `src/main/java/br/com/wagnerlima/tcc/infrastructure/rest/ProdutoController.java`
+* `domain`: O coração do software. Contém as Entidades e interfaces de Repositório puras.
+* `application`: Orquestração de regras de negócio (Services) e contratos de dados (DTOs utilizando `Records`).
+* `infrastructure`: A borda do sistema. Contém a implementação dos *Controllers* REST, *Controllers* GraphQL, Servidores gRPC e os manipuladores globais de exceção.
 
 ## 🚀 Como Executar (Ambiente de Desenvolvimento)
 
-1. Clone este repositório:
+### 1. Pré-requisitos
+* [JDK 21](https://adoptium.net/) instalado.
+* [Docker Desktop](https://www.docker.com/products/docker-desktop/) rodando na máquina.
+* [Postman](https://www.postman.com/) (com suporte a gRPC) para testes manuais.
 
+### 2. Subindo a Infraestrutura (Banco de Dados)
+Clone o repositório e suba o contêiner do PostgreSQL na raiz do projeto:
 ```bash
-git clone https://github.com/SEU_USUARIO/tcc-api-performance.git
+git clone [https://github.com/WagnerSousaLima/tcc-api-performance.git](https://github.com/WagnerSousaLima/tcc-api-performance.git)
+cd tcc-api-performance
+docker-compose up -d
 ```
 
-2. Acesse a pasta do projeto e garanta que o JDK 21 está configurado na sua máquina.
-
-3. Suba a aplicação utilizando o Maven Wrapper:
-
-```bash
+### 3. Executando a Aplicação
+Compile o projeto (necessário para gerar os Stubs do gRPC) e inicie o Spring Boot:
+```
+Bash
+./mvnw clean compile
 ./mvnw spring-boot:run
 ```
+### 4. Acessando as Interfaces
+A aplicação subirá simultaneamente 3 servidores para atender aos diferentes protocolos:
 
-No Windows com Git Bash, o mesmo comando funciona com `./mvnw`.
+🌐 API REST (Tomcat - HTTP/1.1): * http://localhost:8085/produtos (Aceita GET e POST)
 
-4. A API REST estará disponível para testes locais na porta:
+🕸️ API GraphQL (Tomcat - HTTP/1.1): * Painel Visual: http://localhost:8085/graphiql
 
-```text
-http://localhost:8085/produtos
-```
+Endpoint de Integração: http://localhost:8085/graphql
 
-## 🧪 Testes
+⚡ Servidor gRPC (Netty - HTTP/2): * grpc://localhost:9090 (Utilize a aba gRPC do Postman para testar os contratos)
 
-Execute a suíte de testes com:
-
-```bash
-./mvnw test
-```
-
-A base atual inclui:
-- `src/test/java/br/com/wagnerlima/tcc/TccApiPerformanceApplicationTests.java`
-- `src/test/java/br/com/wagnerlima/tcc/application/ProdutoServiceTest.java`
-
-## 📌 Endpoints REST Disponíveis
-
-- `POST /produtos` — cria um produto a partir de `ProdutoRequestDTO`
-- `GET /produtos/{id}` — busca um produto por ID e retorna `ProdutoResponseDTO`
-
-## Observações
-
-- O banco padrão configurado em `src/main/resources/application.yaml` é o **H2 em memória**.
-- A arquitetura foi preparada para suportar evolução futura para GraphQL e gRPC sem expor a entidade de domínio nos controllers.
-- *Pesquisa em desenvolvimento.*
-
+Pesquisa científica em desenvolvimento. Etapa de coleta de métricas em andamento.
