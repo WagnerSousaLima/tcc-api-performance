@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.com.wagnerlima.tcc.infrastructure.grpc.stub";
+
+package produto;
+
+message ProdutoRequest {
+  string nome = 1;
+  double preco = 2;
+  string descricao = 3;
+}
+
+message ProdutoIdRequest {
+  string id = 1;
+}
+
+message ProdutoResponse {
+  string id = 1;
+  string nome = 2;
+  double preco = 3;
+  string descricao = 4;
+}
+
+service ProdutoGrpcService {
+  rpc CriarProduto(ProdutoRequest) returns (ProdutoResponse);
+  rpc BuscarProdutoPorId(ProdutoIdRequest) returns (ProdutoResponse);
+}
