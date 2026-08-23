@@ -1,0 +1,39 @@
+﻿====================================================================
+Resultados consolidados - media +/- desvio padrao (n = 5)
+Data/Hora: 2026-08-23 18:21:47
+Duracao total: 44.3 min
+Execucoes validas: 30 de 30
+====================================================================
+
+CENARIO: frio
+Metrica                      REST                     GraphQL                  gRPC                    
+------------------------------------------------------------------------------------------------------
+Vazao media (req/s)          346,5 +/- 150,17 (CV 43,3%) 247,51 +/- 103,94 (CV 42%) 422,27 +/- 86 (CV 20,4%)
+Total de requisicoes         19340,6 +/- 6396,96 (CV 33,1%) 13324,6 +/- 4833,63 (CV 36,3%) 21062,2 +/- 4286,98 (CV 20,4%)
+Latencia mediana (ms)        19,93 +/- 10,85 (CV 54,4%) 29,85 +/- 17,74 (CV 59,4%) 16,14 +/- 3,1 (CV 19,2%)
+Latencia p95 (ms)            49,08 +/- 31,18 (CV 63,5%) 72,78 +/- 30,79 (CV 42,3%) 39,59 +/- 11,41 (CV 28,8%)
+Taxa de sucesso (%)          99,99 +/- 0,01 (CV 0%)   100 +/- 0,01 (CV 0%)     100 +/- 0 (CV 0%)       
+Trafego enviado (MB)         3,95 +/- 1,31 (CV 33,1%) 5,25 +/- 1,91 (CV 36,3%) 2,11 +/- 0,43 (CV 20,3%)
+Trafego recebido (MB)        5,44 +/- 1,8 (CV 33,1%)  3,04 +/- 1,1 (CV 36,3%)  2,51 +/- 0,51 (CV 20,2%)
+Pico de processador (%)      386,89 +/- 20,4 (CV 5,3%) 443,27 +/- 19,17 (CV 4,3%) 360,21 +/- 20,85 (CV 5,8%)
+Pico de memoria (MB)         392,08 +/- 12,26 (CV 3,1%) 392,72 +/- 11,54 (CV 2,9%) 405,68 +/- 11,97 (CV 2,9%)
+
+CENARIO: quente
+Metrica                      REST                     GraphQL                  gRPC                    
+------------------------------------------------------------------------------------------------------
+Vazao media (req/s)          427,71 +/- 166,34 (CV 38,9%) 426,4 +/- 110,31 (CV 25,9%) 584,74 +/- 75,48 (CV 12,9%)
+Total de requisicoes         25487 +/- 6988,49 (CV 27,4%) 24785,6 +/- 3949,23 (CV 15,9%) 29159,6 +/- 3770,36 (CV 12,9%)
+Latencia mediana (ms)        10,37 +/- 2,52 (CV 24,3%) 11,09 +/- 0,91 (CV 8,2%) 11,93 +/- 0,77 (CV 6,5%)
+Latencia p95 (ms)            21,27 +/- 7,43 (CV 34,9%) 24,52 +/- 6,17 (CV 25,2%) 25,17 +/- 7,54 (CV 29,9%)
+Taxa de sucesso (%)          99,97 +/- 0,04 (CV 0%)   99,98 +/- 0,02 (CV 0%)   100 +/- 0 (CV 0%)       
+Trafego enviado (MB)         5,2 +/- 1,43 (CV 27,5%)  9,76 +/- 1,56 (CV 16%)   2,93 +/- 0,38 (CV 12,8%)
+Trafego recebido (MB)        7,17 +/- 1,97 (CV 27,4%) 5,65 +/- 0,9 (CV 15,9%)  3,48 +/- 0,45 (CV 12,9%)
+Pico de processador (%)      300,12 +/- 40,6 (CV 13,5%) 388,42 +/- 18,41 (CV 4,7%) 275,26 +/- 58,43 (CV 21,2%)
+Pico de memoria (MB)         387,63 +/- 5,39 (CV 1,4%) 411,07 +/- 10,78 (CV 2,6%) 396,35 +/- 6,77 (CV 1,7%)
+
+Notas:
+- CPU em percentual do processo: 100% = um processador logico ocupado integralmente.
+- A aplicacao foi reiniciada antes de cada execucao, isolando o consumo de memoria.
+- Cenario 'frio': container do Postgres reiniciado antes de cada execucao.
+- Cenario 'quente': aquecimento descartado de 20 s antes da janela medida.
+====================================================================

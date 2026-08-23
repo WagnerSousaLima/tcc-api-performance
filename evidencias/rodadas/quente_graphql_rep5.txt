@@ -1,0 +1,181 @@
+﻿
+         /\      Grafana   /ÔÇ¥ÔÇ¥/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ÔÇ¥ÔÇ¥\ 
+  /          \   |   (  |  (ÔÇ¥)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: test-graphql.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 10 max VUs, 1m20s max duration (incl. graceful stop):
+              * default: Up to 10 looping VUs for 50s over 3 stages (gracefulRampDown: 30s, gracefulStop: 30s)
+
+
+running (0m01.0s), 01/10 VUs, 158 complete and 0 interrupted iterations
+default   [   2% ] 01/10 VUs  01.0s/50.0s
+
+running (0m02.0s), 02/10 VUs, 361 complete and 0 interrupted iterations
+default   [   4% ] 02/10 VUs  02.0s/50.0s
+
+running (0m03.0s), 03/10 VUs, 599 complete and 0 interrupted iterations
+default   [   6% ] 03/10 VUs  03.0s/50.0s
+
+running (0m04.0s), 04/10 VUs, 867 complete and 0 interrupted iterations
+default   [   8% ] 04/10 VUs  04.0s/50.0s
+
+running (0m05.0s), 05/10 VUs, 1182 complete and 0 interrupted iterations
+default   [  10% ] 05/10 VUs  05.0s/50.0s
+
+running (0m06.0s), 06/10 VUs, 1281 complete and 0 interrupted iterations
+default   [  12% ] 06/10 VUs  06.0s/50.0s
+
+running (0m07.0s), 07/10 VUs, 1521 complete and 0 interrupted iterations
+default   [  14% ] 07/10 VUs  07.0s/50.0s
+
+running (0m08.0s), 08/10 VUs, 1813 complete and 0 interrupted iterations
+default   [  16% ] 08/10 VUs  08.0s/50.0s
+
+running (0m09.0s), 09/10 VUs, 2284 complete and 0 interrupted iterations
+default   [  18% ] 09/10 VUs  09.0s/50.0s
+
+running (0m10.0s), 09/10 VUs, 2560 complete and 0 interrupted iterations
+default   [  20% ] 09/10 VUs  10.0s/50.0s
+
+running (0m11.0s), 10/10 VUs, 2857 complete and 0 interrupted iterations
+default   [  22% ] 10/10 VUs  11.0s/50.0s
+
+running (0m12.0s), 10/10 VUs, 3426 complete and 0 interrupted iterations
+default   [  24% ] 10/10 VUs  12.0s/50.0s
+
+running (0m13.0s), 10/10 VUs, 3896 complete and 0 interrupted iterations
+default   [  26% ] 10/10 VUs  13.0s/50.0s
+
+running (0m14.0s), 10/10 VUs, 4412 complete and 0 interrupted iterations
+default   [  28% ] 10/10 VUs  14.0s/50.0s
+
+running (0m15.0s), 10/10 VUs, 4847 complete and 0 interrupted iterations
+default   [  30% ] 10/10 VUs  15.0s/50.0s
+
+running (0m16.0s), 10/10 VUs, 5436 complete and 0 interrupted iterations
+default   [  32% ] 10/10 VUs  16.0s/50.0s
+
+running (0m17.0s), 10/10 VUs, 6082 complete and 0 interrupted iterations
+default   [  34% ] 10/10 VUs  17.0s/50.0s
+
+running (0m18.0s), 10/10 VUs, 6743 complete and 0 interrupted iterations
+default   [  36% ] 10/10 VUs  18.0s/50.0s
+
+running (0m19.0s), 10/10 VUs, 7338 complete and 0 interrupted iterations
+default   [  38% ] 10/10 VUs  19.0s/50.0s
+
+running (0m20.0s), 10/10 VUs, 8027 complete and 0 interrupted iterations
+default   [  40% ] 10/10 VUs  20.0s/50.0s
+
+running (0m21.0s), 10/10 VUs, 8772 complete and 0 interrupted iterations
+default   [  42% ] 10/10 VUs  21.0s/50.0s
+
+running (0m22.0s), 10/10 VUs, 9498 complete and 0 interrupted iterations
+default   [  44% ] 10/10 VUs  22.0s/50.0s
+
+running (0m23.0s), 10/10 VUs, 10115 complete and 0 interrupted iterations
+default   [  46% ] 10/10 VUs  23.0s/50.0s
+
+running (0m24.0s), 10/10 VUs, 10741 complete and 0 interrupted iterations
+default   [  48% ] 10/10 VUs  24.0s/50.0s
+
+running (0m24.9s), 10/10 VUs, 11238 complete and 0 interrupted iterations
+default   [  50% ] 10/10 VUs  25.0s/50.0s
+
+running (0m25.9s), 10/10 VUs, 11578 complete and 0 interrupted iterations
+default   [  52% ] 10/10 VUs  26.0s/50.0s
+
+running (0m26.9s), 10/10 VUs, 11981 complete and 0 interrupted iterations
+default   [  54% ] 10/10 VUs  27.0s/50.0s
+
+running (0m27.9s), 10/10 VUs, 12630 complete and 0 interrupted iterations
+default   [  56% ] 10/10 VUs  28.0s/50.0s
+
+running (0m28.9s), 10/10 VUs, 13185 complete and 0 interrupted iterations
+default   [  58% ] 10/10 VUs  29.0s/50.0s
+
+running (0m29.9s), 10/10 VUs, 13856 complete and 0 interrupted iterations
+default   [  60% ] 10/10 VUs  30.0s/50.0s
+
+running (0m30.9s), 10/10 VUs, 14442 complete and 0 interrupted iterations
+default   [  62% ] 10/10 VUs  31.0s/50.0s
+
+running (0m31.9s), 10/10 VUs, 15048 complete and 0 interrupted iterations
+default   [  64% ] 10/10 VUs  32.0s/50.0s
+
+running (0m32.9s), 10/10 VUs, 15673 complete and 0 interrupted iterations
+default   [  66% ] 10/10 VUs  33.0s/50.0s
+
+running (0m33.9s), 10/10 VUs, 16306 complete and 0 interrupted iterations
+default   [  68% ] 10/10 VUs  34.0s/50.0s
+
+running (0m34.9s), 10/10 VUs, 16780 complete and 0 interrupted iterations
+default   [  70% ] 10/10 VUs  35.0s/50.0s
+
+running (0m35.9s), 10/10 VUs, 17234 complete and 0 interrupted iterations
+default   [  72% ] 10/10 VUs  36.0s/50.0s
+
+running (0m36.9s), 10/10 VUs, 17536 complete and 0 interrupted iterations
+default   [  74% ] 10/10 VUs  37.0s/50.0s
+
+running (0m37.9s), 10/10 VUs, 18099 complete and 0 interrupted iterations
+default   [  76% ] 10/10 VUs  38.0s/50.0s
+
+running (0m38.9s), 10/10 VUs, 18730 complete and 0 interrupted iterations
+default   [  78% ] 10/10 VUs  39.0s/50.0s
+
+running (0m39.9s), 10/10 VUs, 19436 complete and 0 interrupted iterations
+default   [  80% ] 10/10 VUs  40.0s/50.0s
+
+running (0m40.9s), 10/10 VUs, 20157 complete and 0 interrupted iterations
+default   [  82% ] 10/10 VUs  41.0s/50.0s
+
+running (0m41.9s), 09/10 VUs, 20839 complete and 0 interrupted iterations
+default   [  84% ] 09/10 VUs  42.0s/50.0s
+
+running (0m42.9s), 09/10 VUs, 21410 complete and 0 interrupted iterations
+default   [  86% ] 09/10 VUs  43.0s/50.0s
+
+running (0m43.9s), 08/10 VUs, 21955 complete and 0 interrupted iterations
+default   [  88% ] 08/10 VUs  44.0s/50.0s
+
+running (0m44.9s), 07/10 VUs, 22476 complete and 0 interrupted iterations
+default   [  90% ] 07/10 VUs  45.0s/50.0s
+docker.exe : time="2026-08-23T21:20:10Z" level=warning msg="Request Failed" error="Post \"http://host.docker.internal:8085/graphql\": dial: i/o 
+timeout"
+No C:\Projetos\MBA-TCC\codigo\tcc-api-performance\run-performance-tests.ps1:300 caractere:13
++     return (& docker @dockerArgs 2>&1 | Out-String)
++             ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (time="2026-08-2...l: i/o timeout":String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+running (0m45.9s), 07/10 VUs, 22994 complete and 0 interrupted iterations
+default   [  92% ] 07/10 VUs  46.0s/50.0s
+
+running (0m46.9s), 06/10 VUs, 23469 complete and 0 interrupted iterations
+default   [  94% ] 06/10 VUs  47.0s/50.0s
+time="2026-08-23T21:20:11Z" level=warning msg="Request Failed" error="Post \"http://host.docker.internal:8085/graphql\": dial: i/o timeout"
+time="2026-08-23T21:20:11Z" level=warning msg="Request Failed" error="Post \"http://host.docker.internal:8085/graphql\": dial: i/o timeout"
+
+running (0m47.9s), 03/10 VUs, 23944 complete and 0 interrupted iterations
+default   [  96% ] 03/10 VUs  48.0s/50.0s
+
+running (0m48.9s), 02/10 VUs, 24310 complete and 0 interrupted iterations
+default   [  98% ] 02/10 VUs  49.0s/50.0s
+
+running (0m49.9s), 01/10 VUs, 24528 complete and 0 interrupted iterations
+default   [ 100% ] 01/10 VUs  50.0s/50.0s
+
+RESUMO {"tecnologia":"GraphQL","cenario":"quente","repeticao":5,"vazao_req_s":491.5,"total_requisicoes":24533,"latencia_mediana_ms":10.4,"latencia_p95_ms":26.28,"taxa_sucesso_pct":99.99,"dados_enviados_mb":9.66,"dados_recebidos_mb":5.6}
+
+running (0m49.9s), 00/10 VUs, 24533 complete and 0 interrupted iterations
+default Ô£ô [ 100% ] 00/10 VUs  50s
+

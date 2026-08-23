@@ -1,0 +1,12 @@
+{
+  "tecnologia": "REST",
+  "cenario": "quente",
+  "repeticao": 1,
+  "vazao_req_s": 298.5,
+  "total_requisicoes": 22040,
+  "latencia_mediana_ms": 11.66,
+  "latencia_p95_ms": 21.03,
+  "taxa_sucesso_pct": 99.97,
+  "dados_enviados_mb": 4.5,
+  "dados_recebidos_mb": 6.2
+}

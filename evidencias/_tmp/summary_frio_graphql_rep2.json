@@ -1,0 +1,12 @@
+{
+  "tecnologia": "GraphQL",
+  "cenario": "frio",
+  "repeticao": 2,
+  "vazao_req_s": 230.14,
+  "total_requisicoes": 11467,
+  "latencia_mediana_ms": 25.86,
+  "latencia_p95_ms": 88.97,
+  "taxa_sucesso_pct": 100,
+  "dados_enviados_mb": 4.52,
+  "dados_recebidos_mb": 2.62
+}

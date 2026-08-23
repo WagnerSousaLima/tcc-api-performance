@@ -1,12 +1,9 @@
 import http from 'k6/http';
 import { check } from 'k6';
+import { resumoJson, perfilDeCarga } from './resumo.js';
 
 export const options = {
-  stages: [
-    { duration: '10s', target: 10 },
-    { duration: '30s', target: 10 },
-    { duration: '10s', target: 0 },
-  ],
+  stages: perfilDeCarga(),
 };
 
 export default function () {
@@ -40,4 +37,8 @@ export default function () {
   check(response, {
     'status is 200': (res) => res.status === 200,
   });
+}
+
+export function handleSummary(data) {
+  return resumoJson(data, 'GraphQL');
 }

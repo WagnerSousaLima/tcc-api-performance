@@ -1,0 +1,12 @@
+{
+  "tecnologia": "REST",
+  "cenario": "frio",
+  "repeticao": 5,
+  "vazao_req_s": 115.6,
+  "total_requisicoes": 8148,
+  "latencia_mediana_ms": 39.2,
+  "latencia_p95_ms": 104.77,
+  "taxa_sucesso_pct": 99.98,
+  "dados_enviados_mb": 1.66,
+  "dados_recebidos_mb": 2.29
+}

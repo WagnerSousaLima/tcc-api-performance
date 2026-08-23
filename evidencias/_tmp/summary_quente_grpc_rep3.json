@@ -1,0 +1,12 @@
+{
+  "tecnologia": "gRPC",
+  "cenario": "quente",
+  "repeticao": 3,
+  "vazao_req_s": 591.15,
+  "total_requisicoes": 29464,
+  "latencia_mediana_ms": 12.19,
+  "latencia_p95_ms": 22.27,
+  "taxa_sucesso_pct": 100,
+  "dados_enviados_mb": 2.96,
+  "dados_recebidos_mb": 3.51
+}
